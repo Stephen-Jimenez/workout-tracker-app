@@ -8,6 +8,7 @@ body {
 
 .heading {
     margin: 0;
+    min-width: 35%;
 }
 
 .content-heading {
@@ -36,6 +37,7 @@ nav ul {
     margin: 0;
     display: flex; 
     justify-content: space-between;
+    min-width: 35%;
 }
 
 nav ul li {
