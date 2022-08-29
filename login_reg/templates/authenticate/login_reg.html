@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>Log in or Register</title>
+</head>
+<body>
+    <nav>
+        <p class="heading">Welcome to Workout Tracker, please register or log in to continue.</p>
+    </nav>
+    <main id="login-reg-container">
+        <section id="register-form">
+            <p class="content-heading">Register</p>
+            {% if form.errors %}
+            <p class="error">There was an error with your form.</p>
+            {% endif %}
+            <form action="create" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="submit" type="submit" value="Submit">
+            </form>
+        </section>
+        <section id="login-form">
+            <p class="content-heading login-p">Log in</p>
+            {% if messages %}
+                {% for message in messages %}
+                <p class="error">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <input class="submit" type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

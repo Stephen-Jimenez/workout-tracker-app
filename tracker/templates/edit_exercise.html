@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>Edit Exercise</title>
+</head>
+<body>
+    <nav class="main-content-nav">
+        <p class="heading">Edit exercise</p>
+        <li onclick="return confirm('Are you sure you want to delete this exercise?')" class="delete"><a href="/tracker/delete_exercise/{{current_exercise.id}}">delete this exercise</a></li>
+        
+        <ul>
+            <li><a href="/logout">log out</a></li>
+            <li><a href="/tracker/workout_detail/{{current_workout.id}}">current workout</a></li>
+            <li><a href="/tracker/home">home</a></li>
+        </ul>
+    </nav>
+    <main class="main-content-container">
+        <section class="form-style">
+            <p class="main-content-heading">edit this exercise</p>
+            <form action="/tracker/edit_exercise/{{current_exercise.id}}" method="post">
+                {% csrf_token %}
+                {{ exercise_form.as_p }}
+                <input class="submit" type="submit" value="Edit Exercise">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

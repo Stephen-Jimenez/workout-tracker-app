@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>Previous Workouts</title>
+</head>
+<body>
+    <nav class="main-content-nav">
+        <p class="heading">Previous workouts, click to view/edit</p>
+        <ul>
+            <li><a href="/logout">log out</a></li>
+            <li><a href="/tracker/home">home</a></li>
+        </ul>
+    </nav>
+    <main class="main-content-container">
+        {% for workout in current_user_workouts %}
+        <a class="workout-link" href="/tracker/workout_detail/{{workout.id}}">{{ workout }}</a>
+        {% endfor %}
+    </main>
+</body>
+</html>

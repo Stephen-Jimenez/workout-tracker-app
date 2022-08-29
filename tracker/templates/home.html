@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="main-content-nav">
+        <p class="heading">Welcome {{user.get_full_name}}. You are logged in!</p>
+        <ul>
+            <li><a href="/logout">log out</a></li>
+            <li><a href="/edit_profile">edit profile</a></li>
+            <li><a href="/tracker/view_previous_workouts">previous workouts</a></li>
+        </ul>
+    </nav>
+    <main class="main-content-container">
+        <section class="form-style">
+            <p class="main-content-heading">create a new workout</p>
+            <form action="/tracker/create_workout" method="post">
+                {% csrf_token %}
+                {{ workout_form.as_p}}
+                <input class="submit" type="submit" value="Create Workout">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

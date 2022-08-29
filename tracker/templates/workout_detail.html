@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>Workout Detail</title>
+</head>
+<body>
+    <nav class="main-content-nav">
+        <p class="heading">Workout on {{current_workout.workout_date}} at {{current_workout.workout_time}}</p>
+        <li onclick="return confirm('Are you sure you want to delete this workout?')" class="delete"><a href="/tracker/delete_workout/{{current_workout.id}}">delete this workout</a></li>
+        <ul>
+            <li><a href="/logout">log out</a></li>
+            <li><a href="/tracker/view_previous_workouts">previous workouts</a></li>
+            <li><a href="/tracker/home">home</a></li>
+        </ul>
+    </nav>
+    <main class="main-content-container">
+        <section class="form-style">
+            <p class="main-content-heading">add an exercise to this workout</p>
+            <form action="/tracker/create_exercise/{{current_workout.id}}" method="post">
+                {% csrf_token %}
+                {{ exercise_form.as_p}}
+                <input class="submit" type="submit" value="Create Exercise">
+            </form>
+        </section>
+        <section class="main-content-container">
+            {% if current_workout_exercises %}
+            <p class="main-content-heading">Exercises for this workout</p>
+            {% for exercise in current_workout_exercises %}
+            <div class="individual-exercise">    
+                <p class="list-top">Exercise name: {{ exercise.exercise_name }}</p>
+                <p>Number of sets: {{ exercise.number_of_sets}}</p>
+                <p>Number of repetitions per set: {{ exercise.number_of_reps_per_set}}</p>
+                <p>Weight per repetition: {{ exercise.weight_per_rep}}</p>
+                <div class="exercise-btns">
+                    <a onclick="return confirm('Are you sure you want to delete this exercise?')" class="delete-edit" href="/tracker/delete_exercise/{{exercise.id}}">delete this exercise</a>
+                    <a class="delete-edit" href="/tracker/edit_exercise_display/{{exercise.id}}">edit this exercise</a> 
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

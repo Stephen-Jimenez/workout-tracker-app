@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    background-color: #8a817c;
+}
+
+.heading {
+    margin: 0;
+}
+
+.content-heading {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.main-content-heading {
+    font-size: 1.5em;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: bold;
+    background-color: #bcb8b1;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex; 
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5em 1em;
+    color: black;
+}
+
+nav ul li a:hover {
+    border: 2px solid black;
+}
+
+.submit {
+    border-radius: 5px;
+    padding: .5em 1em;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+}
+
+.delete {
+    list-style: none;
+}
+.delete a{
+    text-decoration: none;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5em 1em;
+    color: red;
+}
+
+.delete a:hover {
+    border: 2px solid black;
+}
+
+.error {
+    color: red;
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-style {
+    text-align: center;
+}
+
+.form-style input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f4f3ee;
+    border: none;
+    text-align: center;
+}
+
+.form-style input:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.exercise-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+/* login_reg */
+
+.login-p {
+    margin-bottom: .5em;
+}
+
+#login-reg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form,
+#register-form {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+}
+
+#login-form input,
+#register-form input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    background-color: #f4f3ee;
+    border: none;
+    text-align: center;
+}
+
+#login-form input:hover,
+#register-form input:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#register-form ul li,
+#password-form ul li {
+    list-style: none;
+}
+
+#register-form ul{
+    padding: 0;
+}
+
+@media (min-width: 950px) {
+    #login-reg-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+/* login-reg */
+
+/* home */
+
+.workout-selector {
+    display: block;
+    margin: 0 auto auto;
+}
+
+.workout-selector:hover,
+.workout-selector:active {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.main-content-nav {
+    height: 20vh;
+}
+
+.main-content-nav .delete,
+.main-content-nav .heading {
+    align-self: center;
+}
+
+@media (min-width: 1250px) {
+    .main-content-nav {
+        height: auto;
+    }
+    nav {
+        flex-direction: row;
+    }
+    nav ul {
+        width: 30%;
+    }
+    .exercise-btns {
+        flex-direction: row;
+    }
+}
+/* home */
+
+/* previous workouts */
+
+.workout-link {
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+    padding: 1em;
+    margin: 1em;
+    background-color: whitesmoke;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.workout-link:hover,
+.workout-link:focus {
+    border: 2px solid black;
+}
+
+/* previous workouts */
+
+/* workout-detail */
+
+.delete-edit {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5em 1em;
+    font-weight: bold;
+    background-color: #f4f3ee;
+    color: red;
+    margin-top: 1em;
+    text-decoration: none;
+    border: none;
+    margin: 1em;
+}
+
+.delete-edit:hover {
+    border: 2px solid black;
+}
+
+.individual-exercise {
+    padding: 1.75em;
+    margin: 1em;
+    background-color: #bcb8b1;
+    text-align: center;
+}
+
+.list-top {
+    margin-top: 0;
+}
+
+/* workout-detail */
