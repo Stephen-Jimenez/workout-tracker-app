@@ -13,10 +13,9 @@
 </head>
 <body>
     <nav class="main-content-nav">
-        <p class="heading">Edit exercise</p>
-        <li onclick="return confirm('Are you sure you want to delete this exercise?')" class="delete"><a href="/tracker/delete_exercise/{{current_exercise.id}}">delete this exercise</a></li>
-        
+        <p class="page-heading">Edit exercise</p>
         <ul>
+            <li onclick="return confirm('Are you sure you want to delete this exercise?')" class="delete"><a href="/tracker/delete_exercise/{{current_exercise.id}}">delete this exercise</a></li>
             <li><a href="/logout">log out</a></li>
             <li><a href="/tracker/workout_detail/{{current_workout.id}}">current workout</a></li>
             <li><a href="/tracker/home">home</a></li>

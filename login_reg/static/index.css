@@ -6,9 +6,9 @@ body {
     background-color: #8a817c;
 }
 
-.heading {
+.page-heading {
     margin: 0;
-    min-width: 35%;
+    text-align: center;
 }
 
 .content-heading {
@@ -25,7 +25,7 @@ body {
 nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-weight: bold;
     background-color: #bcb8b1;
     margin: 0;
@@ -35,6 +35,7 @@ nav {
 nav ul {
     list-style: none;
     margin: 0;
+    padding: 0;
     display: flex; 
     flex-direction: column;
     height: 200px;
@@ -43,13 +44,14 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
+    margin: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     background-color: whitesmoke;
-    margin-bottom: 1em;
+    margin: 0;
     border: 1px solid black;
     border-radius: 5px;
     padding: .5em 1em;
@@ -190,7 +192,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.main-content-nav .delete,
 .main-content-nav .heading {
     align-self: center;
 }
@@ -201,9 +202,12 @@ nav ul li a:hover {
     }
     nav ul {
         flex-direction: row;
-        min-width: 35%;
         justify-content: space-between;
         height: auto;
+    }
+
+    nav ul li {
+        margin-left: 1em;
     }
     .exercise-btns {
         flex-direction: row;

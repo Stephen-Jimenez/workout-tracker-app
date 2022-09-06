@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="main-content-nav">
-        <p class="heading">Workout on {{current_workout.workout_date}} at {{current_workout.workout_time}}</p>
+        <p class="page-heading">Workout on {{current_workout.workout_date}} at {{current_workout.workout_time}}</p>
         <ul>
             <li onclick="return confirm('Are you sure you want to delete this workout?')" class="delete"><a href="/tracker/delete_workout/{{current_workout.id}}">delete this workout</a></li>
             <li><a href="/logout">log out</a></li>
